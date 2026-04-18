@@ -10,7 +10,7 @@ import UIKit
 final class ImageDownloadManager {
     
     static let shared = ImageDownloadManager()
-    var cacheMemory: NSCache = NSCache<NSString,UIImage>()
+    let cacheMemory = NSCache<NSString, UIImage>()
     private init() {}
     
     func fetchImage(_ url: String,
