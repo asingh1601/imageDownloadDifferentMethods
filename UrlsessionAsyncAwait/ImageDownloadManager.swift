@@ -20,6 +20,7 @@ final class ImageDownloadManager {
         
         if let cacheImage = cacheMemory.object(forKey: NSString(string: url)) {
             completion(.success(cacheImage))
+            return
         }
         guard let imageURL = URL(string: url) else {
             completion(.failure(ImageError.invalidURL))
