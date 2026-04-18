@@ -6,15 +6,15 @@
 //
 import UIKit
 
-final class ImageDownloadManagerAsyncAwait {
-    
+final class ImageDownloadManagerAsyncAwait : ImageDownloader {
+
     static let shared = ImageDownloadManagerAsyncAwait()
     
     var cacheMemory: NSCache = NSCache<NSString,UIImage>()
     
     private init() {}
     
-    func getImage(_ imageUrl: String) async throws -> UIImage {
+    func getImage(from imageUrl: String) async throws -> UIImage {
         
         // 1. Check cache
         if let cachedImage = cacheMemory.object(forKey:  NSString(string: imageUrl)) {

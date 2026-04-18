@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         Task {
             
             do {
-                  let image = try await ImageDownloadManagerAsyncAwait.shared.getImage("https://picsum.photos/200")
+                let image = try await ImageDownloadManagerAsyncAwait.shared.getImage(from: "https://picsum.photos/200")
                 imageViewForAsyncAwait.image = image
             } catch {
                 print(error)
